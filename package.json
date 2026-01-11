@@ -1,0 +1,19 @@
+{
+  "name": "biasguard-core",
+  "version": "4.3.0",
+  "private": true,
+  "description": "BiasGuard Core Monorepo - ONE source of truth",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "version:patch": "npm version patch --workspaces --no-git-tag-version && npm version patch --no-git-tag-version",
+    "version:minor": "npm version minor --workspaces --no-git-tag-version && npm version minor --no-git-tag-version",
+    "publish:all": "npm publish --workspaces --access public"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

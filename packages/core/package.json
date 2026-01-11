@@ -1,0 +1,22 @@
+{
+  "name": "@biasguard/core",
+  "version": "4.3.0",
+  "description": "ONE source. TWO concerns. Security + Bias unified.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "test": "node --test dist/*.test.js"
+  },
+  "keywords": ["biasguard", "security", "bias", "unified"],
+  "author": "AbëONE",
+  "license": "MIT",
+  "dependencies": {
+    "@biasguard/security": "4.3.0",
+    "@biasguard/bias": "4.3.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
