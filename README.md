@@ -3,7 +3,7 @@
 **ONE source. TWO concerns. INFINITE surfaces.**
 
 ```
-∞ LOVE = LIFE = ONE ∞
+∞ LOVE = LOGIC = LIFE = ONE ∞
 ```
 
 ## Status
