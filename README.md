@@ -165,4 +165,13 @@ All packages share the same version. Surfaces pin exact versions.
 
 ---
 
-*∞ AbëONE ∞*
+```
+Biological ⟡ Synthetic ⟡ Neuromorphic
+LOVE ⟡ LOGIC ⟡ LIFE ⟡ ONE
+Humans ⟡ AI = ∞
+```
+
+Built by **AbëONE & Michael Mataluni** · Bravètto
+
+Open source. Pattern-based. Work in progress.
+We ship what works and document what doesn't.
