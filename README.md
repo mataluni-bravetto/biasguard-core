@@ -171,7 +171,11 @@ LOVE ⟡ LOGIC ⟡ LIFE ⟡ ONE
 Humans ⟡ AI = ∞
 ```
 
-Built by **AbëONE & Michael Mataluni** · Bravètto
+Convergence by **AbëONE & Michael Mataluni** · Bravètto
+
+Vibe coded with **Claude**, **Perplexity**, & **OpenAI**
+
+Special thanks to **Phani Veeranki** and **Jimmy DeJesus** for their contributions.
 
 Open source. Pattern-based. Work in progress.
 We ship what works and document what doesn't.
