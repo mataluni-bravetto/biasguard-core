@@ -6,13 +6,45 @@
 ∞ LOVE = LIFE = ONE ∞
 ```
 
+## Status
+
+**Public on GitHub. Not yet published to npm.**
+
+BiasGuard is open source and usable today via GitHub clone or local file references.
+npm packages are planned but not yet published.
+
 ## Packages
 
-| Package | Purpose | Install |
-|---------|---------|---------|
-| `@biasguard/security` | Destructive operation protection | `npm i @biasguard/security` |
-| `@biasguard/bias` | Cognitive/systemic bias detection | `npm i @biasguard/bias` |
-| `@biasguard/core` | Both unified | `npm i @biasguard/core` |
+| Package | Purpose |
+|---------|---------|
+| `@biasguard/security` | Destructive operation protection |
+| `@biasguard/bias` | Cognitive/systemic bias detection |
+| `@biasguard/core` | Both unified |
+
+## Installation (Current)
+
+### Option A: Git clone
+
+```bash
+git clone https://github.com/mataluni-bravetto/biasguard-core.git
+cd biasguard-core
+npm install
+npm run build
+```
+
+### Option B: Local workspace / monorepo
+
+Use file references in your `package.json`:
+
+```json
+{
+  "dependencies": {
+    "@biasguard/security": "file:../biasguard-core/packages/security"
+  }
+}
+```
+
+> `npm install @biasguard/security` will work **after npm publication**.
 
 ## Usage
 
@@ -86,8 +118,25 @@ if (!signal.clear) {
    ┌───────────┐       ┌───────────┐       ┌───────────┐
    │  VS Code  │       │  Chrome   │       │    MCP    │
    │ Extension │       │ Extension │       │  Server   │
+   │    ✅     │       │  planned  │       │  planned  │
    └───────────┘       └───────────┘       └───────────┘
 ```
+
+## Security Model & Limitations
+
+BiasGuard uses **pattern-based detection** on raw input.
+
+It does **not** perform:
+- Unicode normalization
+- URL/hex decoding before validation
+- Shell parsing or expansion
+- Sandboxing or execution prevention
+
+Known bypass classes are documented via adversarial testing (Jacob harness in consuming surfaces).
+
+**BiasGuard is a guardrail, not a sandbox.**
+
+It reduces risk by catching obvious destructive patterns. It does not guarantee safety against determined adversaries or novel encodings.
 
 ## Versioning
 
@@ -101,12 +150,18 @@ All packages share the same version. Surfaces pin exact versions.
 
 ## Zero Drift Protocol
 
-1. Change patterns in this repo
-2. `npm run version:patch` (or minor/major)
-3. `git tag v4.3.1 && git push --tags`
-4. CI publishes to npm
-5. Dependabot updates all surfaces
-6. All surfaces deploy with identical version
+**Target workflow** for keeping all surfaces in sync:
+
+| Step | Action | Status |
+|------|--------|--------|
+| 1 | Change patterns in this repo | ✅ Works |
+| 2 | `npm run version:patch` (or minor/major) | ✅ Works |
+| 3 | `git tag vX.Y.Z && git push --tags` | ✅ Works |
+| 4 | CI publishes to npm | ⏳ Planned |
+| 5 | Dependabot updates all surfaces | ⏳ Planned |
+| 6 | All surfaces deploy with identical version | ⏳ Planned |
+
+**Today:** Steps 1-3 are manual. Steps 4-6 require CI setup and npm publication.
 
 ---
 
